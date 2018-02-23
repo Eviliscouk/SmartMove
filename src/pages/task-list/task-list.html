@@ -42,6 +42,9 @@
         <ion-label>
           {{group.title}}
         </ion-label>
+        <button item-right clear (click)="onAddTask(group.title)">
+          <ion-icon name="add" ></ion-icon>
+        </button>
       </ion-item-divider>
 
       <ion-item-sliding *ngFor="let task of group.tasks" #slidingItem [attr.track]="task.tracks[0] | lowercase" [hidden]="task.hide">
