@@ -23,10 +23,11 @@ export class TaskEditPage implements OnInit{
 
   ngOnInit() {
     this.mode = this.navParams.get('mode');
+    this.taskGroupTitle = this.navParams.get('groupTitle');
     if (this.mode == 'Edit') {
       this.task = this.navParams.get('task');
-      this.taskGroupTitle = this.navParams.get('groupTitle');
     }
+    
     this.initializeForm();
   }
 
@@ -50,6 +51,9 @@ export class TaskEditPage implements OnInit{
 
   onSubmit() {
     const value = this.taskForm.value;
+    if (!this.task)
+      this.task = {};
+
     this.task.name = value.name;
     this.task.description = value.description;
     this.task.location = value.location;
