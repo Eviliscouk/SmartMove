@@ -13,6 +13,7 @@ import { UserData } from '../../providers/user-data';
 
 import { TaskDetailPage } from '../task-detail/task-detail';
 import { TaskFilterPage } from '../task-filter/task-filter';
+import { TaskEditPage } from '../task-edit/task-edit';
 
 
 @Component({
@@ -58,6 +59,11 @@ export class TaskListPage {
       this.shownTasks = data.shownTasks;
       this.groups = data.groups;
     });
+  }
+
+  onAddTask(groupTitle: string)
+  {
+    this.navCtrl.push(TaskEditPage, {mode: 'New', groupTitle: groupTitle});
   }
 
   presentFilter() {
