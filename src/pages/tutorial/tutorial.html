@@ -1,0 +1,57 @@
+<ion-header no-border>
+  <ion-navbar>
+    <ion-buttons end *ngIf="showSkip">
+      <button ion-button (click)="startApp()" color="primary">Skip</button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content no-bounce>
+  <ion-slides #slides (ionSlideWillChange)="onSlideChangeStart($event)" pager>
+
+    <ion-slide>
+      <!-- <img src="assets/img/ica-slidebox-img-1.png" class="slide-image"/> -->
+      <h2 class="slide-title">
+        Welcome to <b>Smart Move</b>
+      </h2>
+      <p>
+        The <b>Smart Move app</b> is your personal move manager allowing you coordinate all the different activites involved in the buying and / or selling of your property.
+      </p>
+    </ion-slide>
+
+    <ion-slide>
+      <!-- <img src="assets/img/ica-slidebox-img-2.png" class="slide-image"/> -->
+      <h2 class="slide-title" >Task List</h2>
+      <p><b>The Task List</b> is your personal task list showing the steps involved in completing all individual mile-stones and acheiving your end goals, loaded with an initial set of standard categories and associated tasks, edit remove or add tasks to suit your needs.</p>
+      <p><b>Tasks</b> allow you to break down required activities into suitable chunks to manage, you can add documents, photos, locations, notes, dates, moneatry values and much more to each task!</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image"/>
+      <h2 class="slide-title">Quick View</h2>
+      <p><b>The Quick View</b> is a pin board allowing you to add high priority or favourite tasks for quick access</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image"/>
+      <h2 class="slide-title">Contacts</h2>
+      <p><b>Contacts</b> allows you to create contact cards of people / companies associated with your tasks, you can link to contact information on your device, store notes and contact via phone/sms/email directly from one place</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-3.png" class="slide-image"/>
+      <h2 class="slide-title">Services</h2>
+      <p><b>Services</b> provides useful utilities to aid in your completion of activities all useful services can be accessed from this simple portal!</p>
+    </ion-slide>
+
+    <ion-slide>
+      <img src="assets/img/ica-slidebox-img-4.png" class="slide-image"/>
+      <h2 class="slide-title">Ready to get started?</h2>
+      <button ion-button icon-end large clear (click)="startApp()">
+        Continue
+        <ion-icon name="arrow-forward"></ion-icon>
+      </button>
+    </ion-slide>
+
+  </ion-slides>
+</ion-content>

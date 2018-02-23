@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title *ngIf="task">{{task.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="task">
+    <h1>{{task.name}}</h1>
+    <h4 *ngFor="let contact of task?.contacts">
+    {{contact.name}}
+  </h4>
+    <p>
+      {{task.timeStart}} - {{task.timeEnd}}
+    </p>
+    <p>{{task.location}}</p>
+    <p>{{task.description}}</p>
+  </div>
+  <ion-row>
+      <ion-col>
+        <button
+          ion-button
+          outline
+          block
+          (click)="onEditTask()">Edit Task</button>
+      </ion-col>
+    </ion-row>
+</ion-content>

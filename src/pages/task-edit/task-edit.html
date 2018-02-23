@@ -1,0 +1,32 @@
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>{{ mode }} Task</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+      <ion-list>
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>Description</ion-label>
+          <ion-textarea formControlName="description"></ion-textarea>
+        </ion-item>
+        <ion-item>
+          <ion-label floating>location</ion-label>
+          <ion-input type="text" formControlName="location"></ion-input>
+        </ion-item>
+      </ion-list>
+      <button
+        type="submit"
+        ion-button
+        block
+        [disabled]="!taskForm.valid">{{ mode }} Task</button>
+    </form>
+  </ion-content>
